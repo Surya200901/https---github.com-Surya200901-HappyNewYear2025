@@ -523,6 +523,13 @@
             const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
 
             countdownElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+
+            // If the countdown ends, display a message
+          if (timeDifference < 0) {
+            clearInterval();
+            countdownElement.innerHTML = "Happy New Year 2025!";
+            document.getElementById("popup").style.display = "none"; // Hide the popup after countdown ends
+        }
         }, 1000);
         // Trigger Paper Rainfall in Header
         function celebrate() {
