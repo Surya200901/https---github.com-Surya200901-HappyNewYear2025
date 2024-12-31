@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy New Year 2025</title>
+    <style>
+        /* Global Styles */
+        body {
+          margin: 0;
+          padding: 0;
+          background: linear-gradient(135deg, #ff7e5f, #feb47b);
+          font-family: 'Arial', sans-serif;
+          overflow: scroll; /* Enable scrollbar */
+          height: 100vh; /* Ensure the body takes the full viewport height */
+          animation: discoBackground 5s infinite; /* Add animation for disco effect */
+      }
+
+      h1 {
+        text-align: center;
+        font-size: 4rem;
+        margin-top: 50px;
+        animation: fadeIn 3s ease-in-out, colorChange 5s infinite;
+    }
+
+        .container {
+            text-align: center;
+            color: #fff;
+            animation: fadeIn 5s ease-in-out;
+            padding: 20px;
+        }
+
+        .cake-img {
+            display: block;
+            width: 250px;
+            margin: 30px auto;
+            border-radius: 15px;
+            animation: bounceIn 2s ease-out;
+        }
+
+        .message {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-top: 30px;
+            animation: scaleUp 2s ease-in-out infinite alternate;
+        }
+
+        .wish {
+            font-size: 1.5rem;
+            margin-top: 20px;
+            animation: fadeIn 4s ease-in-out;
+        }
+
+        .balloon {
+            position: absolute;
+            bottom: -200px;
+            animation: floatBalloons 10s ease-in-out infinite;
+        }
+
+        .gift-box {
+            position: absolute;
+            right: 100px;
+            bottom: 50px;
+            animation: bounceGift 2s infinite ease-in-out;
+        }
+
+        .gift-box img {
+            width: 200px;
+            height: 150px;
+        }
+
+        .balloon img {
+            width: 80px;
+            height: 80px;
+            margin: 10px;
+        }
+
+        .icons {
+            margin-top: 40px;
+        }
+
+        .icons img {
+            width: 300px;
+            margin: 15px;
+            animation: scaleUp 3s ease-in-out infinite alternate;
+        }
+
+        .quote {
+            font-size: 1.2rem;
+            margin-top: 50px;
+            font-style: italic;
+            animation: fadeIn 4s ease-in-out;
+        }
+
+        .footer {
+            margin-top: 50px;
+            text-align: center;
+            font-size: 1.3rem;
+            color: white;
+            animation: fadeIn 6s ease-in-out;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes bounceIn {
+            0% {
+                transform: translateY(-100px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes scaleUp {
+            0% {
+                transform: scale(0.9);
+            }
+            100% {
+                transform: scale(1.1);
+            }
+        }
+
+        @keyframes floatBalloons {
+            0% {
+                bottom: -200px;
+            }
+            100% {
+                bottom: 100%;
+            }
+        }
+
+        @keyframes bounceGift {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes discoBackground {
+          0% {
+              background: linear-gradient(135deg, #5fff9c, hwb(280 48% 0%));
+          }
+          25% {
+              background: linear-gradient(135deg, #ff6347, #f5a623);
+          }
+          50% {
+              background: linear-gradient(135deg, #3b5998, #8b9dc3);
+          }
+          75% {
+              background: linear-gradient(135deg, #5a2a8e, #ff8e72);
+          }
+          100% {
+              background: linear-gradient(135deg, #f4ff5f, #fe7ba0);
+          }
+        }
+
+        /* Countdown Styling */
+        .countdown {
+            font-size: 2rem;
+            color: #fff;
+            font-weight: bold;
+            margin-top: 30px;
+            animation: pulse 2s infinite;
+        }
+
+        /* Button and Interactive Section */
+        .btn {
+            background-color: #ff6347;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            margin-top: 50px;
+            border-radius: 25px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .btn:hover {
+            background-color: #ff4500;
+            transform: scale(1.1);
+        }
+
+        /* Snowfall Effect */
+        .snowflake {
+            position: absolute;
+            top: -10px;
+            color: #fff;
+            font-size: 20px;
+            animation: snow 10s linear infinite;
+        }
+
+        @keyframes snow {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(100vh);
+            }
+        }
+
+        /* Paper Rainfall Effect */
+        .paper-rain {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            pointer-events: none;
+            z-index: 100;
+            opacity: 0;
+            animation: rainFall 3s forwards;
+        }
+
+        .header {
+            position: relative;
+            padding: 50px 20px;
+            background-color: rgba(255, 255, 255, 0.7);
+            text-align: center;
+            border-bottom: 10px solid #ff6347;
+        }
+
+        .paper {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: #fff;
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+            opacity: 0;
+            animation: dropPaper 3s infinite;
+        }
+
+        @keyframes rainFall {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes dropPaper {
+            0% {
+                opacity: 0;
+                top: -20px;
+            }
+            100% {
+                opacity: 1;
+                top: 100%;
+            }
+        }
+
+        /* Popup Styling */
+        .popup {
+            display: block; /* Default is visible */
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #ff7e5f;
+            color: white;
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            width: 300px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            animation: popupIn 0.5s ease-in-out;
+        }
+
+        .popup h2 {
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .popup p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        .popup button {
+            background-color: #ff4500;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1.1rem;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .popup button:hover {
+            background-color: #ff6347;
+        }
+
+        @keyframes popupIn {
+            0% {
+                opacity: 0;
+                transform: translate(-50%, -50%) scale(0.7);
+            }
+            100% {
+                opacity: 1;
+                transform: translate(-50%, -50%) scale(1);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            .cake-img {
+                width: 180px;
+            }
+            .message {
+                font-size: 1.5rem;
+            }
+            .icons img {
+                width: 50px;
+            }
+            .popup {
+                width: 80%;
+            }
+        }
+
+        .snowflake {
+          position: absolute;
+          top: -10px;
+          color: #fff;
+          font-size: 20px;
+          animation: snow 10s linear infinite;
+      }
+
+      @keyframes snow {
+        0% {
+            transform: translateY(0);
+        }
+        100% {
+            transform: translateY(100vh);
+        }
+    }
+
+    @keyframes rainFall {
+      0% {
+          opacity: 0;
+      }
+      100% {
+          opacity: 1;
+      }
+  }
+  .friends-photos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 50px;
+    padding: 20px;
+}
+
+.friend {
+    text-align: center;
+}
+
+.friend-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.friend h3 {
+    font-size: 1.2rem;
+    color: #fff;
+    margin-bottom: 5px;
+}
+
+.friend p {
+    font-size: 1rem;
+    color: #fff;
+    font-style: italic;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+
+/* Multi-color effect */
+@keyframes colorChange {
+  0% {
+      color: red;
+  }
+  20% {
+      color: orange;
+  }
+  40% {
+      color: yellow;
+  }
+  60% {
+      color: green;
+  }
+  80% {
+      color: blue;
+  }
+  100% {
+      color: violet;
+  }
+}
+
+    </style>
+</head>
+<body>
+
+    <div class="header">
+      <h1 id="new-year-heading">Happy New Year 2025!</h1>
+        <img src="https://img.freepik.com/premium-photo/beautiful-cake-year-2025_1172145-676.jpg" alt="Happy New Year Cake" class="cake-img">
+        <div class="message">Wishing you a year filled with love, laughter, and countless adventures. May 2025 bring you happiness beyond measure!</div>
+        <div class="wish">Best wishes from Surya Settipalli!</div>
+    </div>
+
+    <div class="container">
+        <div class="countdown">
+            <p>Countdown to New Year: <span id="countdown"></span></p>
+        </div>
+
+        <div class="balloons">
+            <img src="https://t3.ftcdn.net/jpg/02/19/32/64/360_F_219326459_5p6KnjuAPsVXW05YWdvNcGYe0eg1GVxC.jpg" alt="Balloon" class="balloon">
+            
+        </div>
+
+        <div class="gift-box">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScdP1RzLT3SuWSJq0_uPnm1yRr_qx2d3KPxQ&s" alt="Gift">
+        </div>
+
+        <div class="icons">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5Md6cC1e6TjS2D3zgGyUEvCdVuvYUHQU6cw&s" alt="Firework">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdfklINySbcrQ6L6YxMthe9cmyJ4JW8XjMqw&s" alt="Confetti">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMzEl3vpQ-KcERpcaSmVlouc51n-RLE6ZAUA&s" alt="Candle">
+        </div>
+
+        <div class="quote">
+            "New Year, new beginnings. May the year ahead be filled with joy, health, and prosperity!"
+        </div>
+    </div>
+
+    <!-- Friends Photo Section -->
+<div class="friends-photos">
+  <div class="friend">
+      <img src="images/friend1.jpg" alt="Friend 1" class="friend-photo">
+      <h3>Hemanth Macha</h3>
+      <p>Thanks ra love de for always being there 4 me ❤ E year ayina duniyani Dhunnedham and I want to tell one thing that we don't explore any places to-gether. so, if everything is fine then we explore the new place and make some adventures !</p>
+  </div>
+  <div class="friend">
+      <img src="images/friend2.jpg" alt="Friend 2" class="friend-photo">
+      <h3>Namaste Vamsi Swamy</h3>
+      <p>ఈ 2025 లో ఆ దేవునికి ఎన్నో పూజలు చేసి మన మంచని కోరుకుంటావ్ అని నిన్ను వేడుకుంటున్న 🙏🏻</p>
+  </div>
+  <div class="friend">
+      <img src="images/friend3.jpg" alt="Friend 3" class="friend-photo">
+      <h3>Mawa</h3>
+      <p>I hope our friendship will continue last long forever and ever mawa ❤</p>
+  </div>
+  <div class="friend">
+      <img src="images/friend4.jpg" alt="Friend 4" class="friend-photo">
+      <h3>Sandhya</h3>
+      <p>I still remeber those 10th incedents and i called you sandy 😂 always Special one ❤</p>
+  </div>
+  <div class="friend">
+      <img src="images/friend5.jpg" alt="Friend 5" class="friend-photo">
+      <h3>Thanmayee</h3>
+      <p>Personally for me Chinni thannu Beauty 😅 HR ma'am 💥</p>
+  </div>
+  <div class="friend">
+      <img src="images/friend6.jpg" alt="Friend 6" class="friend-photo">
+      <h3>Memories Forver !</h3>
+      <p>I hope Our bound will continue to our last breath</p>
+  </div>
+
+</div>
+
+
+    <div class="footer">
+        <p>Have a fantastic New Year 2025!</p>
+        <p>With love, Surya Settipalli</p>
+    </div>
+
+    <!-- Popup -->
+    <div id="popup" class="popup">
+        <h2>Surprise!</h2>
+        <p>Click below to celebrate the New Year!</p>
+        <button onclick="celebrate()">Celebrate</button>
+    </div>
+
+    <br>
+    <script>
+
+      const countdownElement = document.getElementById("countdown");
+        const targetDate = new Date("2025-01-01T00:00:00").getTime();
+        
+        // Countdown function
+        setInterval(function () {
+            const currentDate = new Date().getTime();
+            const timeDifference = targetDate - currentDate;
+            const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+
+            countdownElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+        }, 1000);
+        // Trigger Paper Rainfall in Header
+        function celebrate() {
+            // Show the paper rain
+            let paperRain = document.createElement("div");
+            paperRain.classList.add("paper-rain");
+            document.querySelector(".header").appendChild(paperRain);
+
+            for (let i = 0; i < 100; i++) {
+                let paper = document.createElement("div");
+                paper.classList.add("paper");
+                paper.style.left = Math.random() * 100 + "vw";
+                paper.style.animationDelay = Math.random() * 5 + "s";
+                paperRain.appendChild(paper);
+            }
+
+            // Close the popup
+            document.getElementById("popup").style.display = "none";
+        }
+
+        // Snowflakes
+        function createSnowflakes() {
+          const snowflakeContainer = document.getElementById('snowflakes');
+          const snowflakeCount = 100;
+
+          for (let i = 0; i < snowflakeCount; i++) {
+              let snowflake = document.createElement('div');
+              snowflake.classList.add('snowflake');
+              snowflake.innerHTML = "&#10052;";
+              snowflake.style.left = Math.random() * window.innerWidth + 'px';
+              snowflake.style.animationDuration = Math.random() * 3 + 2 + 's';
+              snowflake.style.animationDelay = Math.random() * 5 + 's';
+              snowflakeContainer.appendChild(snowflake);
+          }
+      }
+
+      // Execute snowflake effect on page load
+      createSnowflakes();
+    </script>
+
+</body>
+</html>
